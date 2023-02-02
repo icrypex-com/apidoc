@@ -44,7 +44,7 @@ This documentation details use of Icrypex REST API for spot exchange.
 ### Funding Endpoints
 
 - [Spot Balance](funding.md#place-order) - Get spot balances for each asset
-- [Transfer Funds](funding.md#transfer-funds) - Transfers funds between spot, isolated and cross wallets
+- [Transfer Funds](funding.md#transfer-funds) - Transfers funds between wallets
 - [Withdraw Funds](funding.md#withdraw-funds) - Withdraws funds to blockchain networks
 - [Withdrawals](funding.md#withdrawals) - Withdrawal history and reports
 - [Deposits](funding.md#deposits) - Deposit history and reports
