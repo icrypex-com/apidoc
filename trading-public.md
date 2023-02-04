@@ -34,14 +34,22 @@ In response model, assets field contains an asset data array. Each asset data in
 | symbol              | string      | Asset symbol, BTC. |
 | name                | string      | Asset name, Bitcoin. |
 | description         | string      | Asset description. |
+| categories          | string[]    | Asset category names as array. |
 | type                | string      | Asset type, CRYPTO or FIAT. |
 | isEnabled           | boolean     | Asset status. |
+| isNew               | boolean     | True, if asset newly added. |
 | isWithdrawalEnabled | boolean     | Asset withdrawal status. |
 | isDepositEnabled    | boolean     | Asset deposit status. |
 | precision           | integer     | Asset withdrawal and deposit precision. |
 | displayPrecision    | integer     | Asset display precision for user balance pages etc. |
 | minDeposit          | string      | Minimum deposit quantity. |
 | minWithdrawal       | string      | Minimum withdrawal quantity. |
+| limitWithdrawal24h  | string      | 24-hour withdrawal limit |
+| limitWithdrawal30d  | string      | 30-day withdrawal limit |
+| limitDeposit24h     | string      | 24-hour deposit limit |
+| limitDeposit30d     | string      | 30-day deposit limit |
+| updatedDate         | int64       | Asset updated date in epoch time |
+| createdDate         | int64       | Asset created date in epoch time |
 
 <br />
 
@@ -66,6 +74,7 @@ In response model, pairs field contains an pair data array. Each pair data inclu
 | status              | string      | Pair matching engine status. |
 | marketTypes         | string[]    | Supported market types such as SPOT |
 | orderTypes          | string[]    | Supported order types such as MARKET, LIMIT, STOP_MARKET. |
+| tickSize            | string      | Tick increment/decrement quantity in base for UI +/- buttons. |
 
 <br />
 
