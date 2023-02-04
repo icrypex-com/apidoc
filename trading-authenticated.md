@@ -22,7 +22,7 @@ Request body must be in JSON Format. Fields of JSON object are described below:
 | total        | Yes      | Total is used for only market or stop market buy orders. |
 | triggerPrice | Yes      | For stop orders, trigger price. |
 | clientId     | Yes      | You can use that value to categorize your orders. It's kept in our db and you receive that value from reporting endpoints. |
-
+| insertType   | Yes      | DEFAULT, BORROW or REPAY. Not requried for spot markets. |
 
 If placing order is successful returns 200 OK.
 Response body is in JSON format and includes order status and trade information.
@@ -39,7 +39,7 @@ Response model fields are described below:
 | leftQuantity | string      | Left order quantity. If there is no trade, equals to quantity. |
 | total        | string      | Price x quantity value. For market orders, the total value you requsted. |
 | matchedTotal | string      | Sum of "price x quantity" values of all trades of the order. |
-| trades       | object[]    | Order's trades. For market orders, that array will always elements. |
+| trades       | object[]    | Order's trades. For market orders, that array will always elements. Each object has two string properties; quantity and price. |
 
 ### Example Request
 
@@ -143,7 +143,7 @@ The result is wrapped within pagination model. Both models are described below:
 | quantity     | string      | Order quantity |
 | leftQuantity | string      | Order left quantity |
 | triggerPrice | string      | Trigger price if the order is stop order. Otherwise, ignore the value. |
-| totalQuote   | string      | Price x Quantity value |
+| total        | string      | Price x Quantity value |
 | side         | string      | Order side BUY or SELL |
 | status       | string      | Order status OPEN, FILL or CANCEL |
 | type         | string      | Order type; LIMIT, MARKET, STOP_MARKET, STOP_LIMIT |
