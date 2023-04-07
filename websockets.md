@@ -201,6 +201,8 @@ Sample message:
 
 ```obd|{"ps":"BTCUSDT","cs":26355,"a":[],"b":[{"p":"39650","q":"0.376","t":1}]}```
 
+**IMPORTANT NOTE :** If you keep order book data in your application, clear your application orderbook rows when disconnected or reconnected to websocket connection. Otherwise, you might receive the rows data, you already added your application, with inserted flag.
+
 <br />
 
 ## Tradingview Channel
