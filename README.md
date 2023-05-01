@@ -3,7 +3,7 @@
 Welcome to Icrypex developer documentation.<br />
 This documentation details use of Icrypex REST API for spot exchange.
 
-- The base endpoint is: **https://v2api.icrypex.com**
+- The base endpoint is: **https://api.icrypex.com**
 - All endpoints return either a JSON object or array if the status code is not 204 No Content.
 - Some endpoints are authenticated and will require and API Key
 - Once API key is created, it is recommended to set IP restrictions on the key for security reasons.
