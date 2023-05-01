@@ -4,7 +4,7 @@ In order to discover other topics go back to [Table of Contents](README.md)
 
 ## Introduction
 
-- Websocket endpoint is wss://v2stream.icrypex.com.
+- Websocket endpoint is wss://istream.icrypex.com.
 - Authentication is not mandatory. Guest connections can receive public data.
 - One time authentication is enough for each connection.
 
