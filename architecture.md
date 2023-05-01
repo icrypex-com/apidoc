@@ -16,7 +16,7 @@ Each HTTP Request must include these headers:
 Example Request:
 
 ```
-curl https://v2api.icrypex.com/v1/sapi/order
+curl https://api.icrypex.com/v1/sapi/order
 --header "ICX-API-KEY: "
 --header "ICX-SIGN: "
 --header "ICX-TS: "
