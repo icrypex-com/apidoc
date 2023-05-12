@@ -171,6 +171,15 @@ Error Model Example:
 
 ## Rate Limits
 
+Base API URL : https://api.icrypex.com
+
+* Action: Specifices action of the endpoint
+* Method: HttpVerb (GET, POST, DELETE)
+* Period: Specifies the period of requests.
+* Limit: Speficies request limit of the rule.
+* Rejected: Rejecting period if you are getting 429 HTTP status code.
+* Policy: IP or IP and Account reject policies in the rejecting period.
+
 | Action | URI | Method | Period (sec) | Limit (req) | Rejected (sec) | Policy |
 | ------ | --- | ------ | ------------ | ----------- | -------------- | ------ |
 | Order Insert | /sapi/v1/orders | POST | 60 | 300 | 60 | IP, Account |
