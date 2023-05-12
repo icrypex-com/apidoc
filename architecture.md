@@ -171,8 +171,22 @@ Error Model Example:
 
 ## Rate Limits
 
-Please [contact us](https://www.icrypex.com/corporate/contact-form) to get more information about rate limiting rules.
+| Action | URI | Method | Period (sec) | Limit (req) | Rejected (sec) | Policy |
+| ------ | --- | ------ | ------------ | ----------- | -------------- | ------ |
+| Order Insert | /sapi/v1/orders | POST | 60 | 300 | 60 | IP, Account |
+| Order Cancel | /sapi/v1/orders/{orderId} | DELETE | 60 | 300 | 60 | IP, Account |
+| Open Orders | /sapi/v1/orders/{symbol} | GET | 60 | 300 | 60 |  IP, Account |
+| Order History | /sapi/v1/orders/history | GET | 60 | 300 | 60 | IP, Account |
+| Trades of the Order | /sapi/v1/orders/trades/{orderId} | GET | 60 | 300 | 60 | IP, Account |
+| Orderbook | /sapi/v1/orderbook | GET | 60 | 240 | 60 | IP |
+| Ticker | /sapi/v1/tickers | GET | 60 | 300 | 60 | IP |
+| Account Trades | /sapi/v1/trades | GET | 60 | 180 | 60 | IP, Account |
+| Klines | /sapi/v1/trades/kline | GET | 60 | 120 | 60 | IP |
+| Kline History | /sapi/v1/trades/kline/history | GET | 60 | 120 | 60 | IP |
+| OHLC | /sapi/v1/trades/ohlc | GET | 60 | 120 | 60 | IP |
+| Last Trades by Symbol | /sapi/v1/trades/last?symbol={symbol} | GET | 60 | 240 | 60 | IP |
 
+Please [contact us](https://www.icrypex.com/corporate/contact-form) to get more information about rate limiting rules.
 
 <br />
 
