@@ -190,10 +190,12 @@ Base API URL : https://api.icrypex.com
 | Orderbook | /sapi/v1/orderbook | GET | 60 | 240 | 60 | IP |
 | Ticker | /sapi/v1/tickers | GET | 60 | 300 | 60 | IP |
 | Account Trades | /sapi/v1/trades | GET | 60 | 180 | 60 | IP, Account |
+| Account Spot Wallet | /sapi/v1/wallet/spot | GET | 60 | 120 | 60 | IP, Account |
 | Klines | /sapi/v1/trades/kline | GET | 60 | 120 | 60 | IP |
 | Kline History | /sapi/v1/trades/kline/history | GET | 60 | 120 | 60 | IP |
 | OHLC | /sapi/v1/trades/ohlc | GET | 60 | 120 | 60 | IP |
 | Last Trades by Symbol | /sapi/v1/trades/last?symbol={symbol} | GET | 60 | 240 | 60 | IP |
+
 
 Please [contact us](https://www.icrypex.com/corporate/contact-form) to get more information about rate limiting rules.
 
