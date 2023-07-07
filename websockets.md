@@ -209,6 +209,8 @@ Sample message:
 ### Short Orderbook
 
 You can use short orderbook channel, if you do not want to manage orderbook difference. But short orderbook channel sends only best 5 order rows.
+Right after subscribed to the channel, latest orderbook data is sent. After that, if there are changes in best 5 rows it is sent to the clients immediately.
+If some non in best 5 rows are changed, no data is sent.
 Short orderbook channel name is orderbook-short. And it's parametered channel.
 
 Sample subscription message: 
