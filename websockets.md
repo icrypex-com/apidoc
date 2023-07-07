@@ -13,8 +13,8 @@ In order to discover other topics go back to [Table of Contents](README.md)
 Icrypex websocket supports these features:
 
 - Public last trades
-- Public ticker values
 - Public orderbook values
+- Public ticker values
 - Last tradingview candle by different resolutions
 - Balance change notifications for authenticated users
 - Order execution informations for authenticated users
@@ -157,6 +157,9 @@ Sample message:
 
 Order Book is a parametered channel. Parameter is pair symbol in lower case. Server sends two kind of orderbook message to it's subscribers. One of them is full orderbook snapshot, other message is difference data.
 
+Sample subscription message: 
+```subscribe|{"c":"orderbook@btcusdt","s":true}```
+
 ### Change Sets
 
 When a client subscribe to orderbook channel, full snapshot of the current orderbook is sent to the client with a change set number. That message is sent only one time right after client subscription. Change set number is always incremental and increases one by one. That change set number should be checked by the client. If a change set number is missing, the orderbook in client might be wrong. In this situation client should resubscribe to the channel.
@@ -202,6 +205,16 @@ Sample message:
 ```obd|{"ps":"BTCUSDT","cs":26355,"a":[],"b":[{"p":"39650","q":"0.376","t":1}]}```
 
 **IMPORTANT NOTE :** If you keep order book data in your application, clear your application orderbook rows when disconnected or reconnected to websocket connection. Otherwise, you might receive the rows data, you already added your application, with inserted flag.
+
+### Short Orderbook
+
+You can use short orderbook channel, if you do not want to manage orderbook difference. But short orderbook channel sends only best 5 order rows.
+Short orderbook channel name is orderbook-short. And it's parametered channel.
+
+Sample subscription message: 
+```subscribe|{"c":"orderbook-short@btcusdt","s":true}```
+
+**IMPORTANT NOTE :** If you subscribe both orderbook and orderbook-short channels at same time, both channel sends same type (orderbook) of message. This can cause some misuse. Do not subscribe both orderbook and orderbook-short channels at same time.
 
 <br />
 
