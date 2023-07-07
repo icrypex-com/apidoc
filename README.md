@@ -59,6 +59,7 @@ This documentation details use of Icrypex REST API for spot exchange.
 - [Channel Subscriptions](websockets.md#channel-subscriptions) - Subscribe to websocket channels and unsubscribe
 - [Tickers Channel](websockets.md#tickers-channel) - Websocket ticker channels and receiving ticker data
 - [Order Book Channel](websockets.md#order-book-channel) - Websocket orderbook channels and receiving orderbook and difference data
+- [Trade Channel](websockets.md#trade-channel) - Websocket Trade channels and receiving latest trades
 - [Tradingview Channel](websockets.md#tradingview-channel) - Websocket tradingview channels and receiving last tradingview candle data
 - [Order Status & Trade](websockets.md#order-status--trade) - Receiving notifications about order status changes and new trade data over websockets
 - [Balance Changes](websockets.md#balance-changes) - Receiving balance change notifications over websockets
