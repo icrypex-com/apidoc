@@ -205,6 +205,37 @@ Sample message:
 
 <br />
 
+## Trade Channel
+
+Trade channel sends public trade data to it's subscribers. The channel name is ```trade```.
+When a client subscribe to trade channel, last trades (usually last 50 trades) is sent to the client. That message is sent only one time right after client subscription.
+And while client is connected and subscribed to the channel, each newly created trade is sent as single data with trade message type.
+
+### Last Trades Message
+
+Message type is trades. The message is sent right after client is subscribed to the channel. The JSON model is below:
+
+| Field Name | Field Type | Description |
+| :--------- | :--------- | :---------- |
+| ps         | string     | Pair Symbol, BTCUSDT |
+| ts         | object[]   | Trade items |
+
+Each trade item model is also model of single trade messages and described in next section.
+
+### Last Trade Message
+
+Message type is trade. The message is sent active subscribers when a trade is created.
+
+| Field Name | Field Type | Description |
+| :--------- | :--------- | :---------- |
+| ps         | string     | Pair Symbol, BTCUSDT |
+| d          | integer    | Trade date in unix seconds |
+| p          | string     | Trade price |
+| q          | string     | Trade quantity |
+| s          | integer    | Trade side 0 for buy, 1 for sell |
+
+<br />
+
 ## Tradingview Channel
 
 This feature is not enabed yet.
