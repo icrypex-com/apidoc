@@ -253,13 +253,55 @@ Message type is trade. The message is sent active subscribers when a trade is cr
 
 ## Tradingview Channel
 
-This feature is not enabed yet.
+Tradingview WebSocket channel sends always latest kline candle data. As an example for 1 hour resolution if the time is 10:31 in UTC, 10:00 - 11:00 candle data is sent.
+In same resolution period same candle date is sent over again when a new trade is created. You should be aware, you will receive same candle data again with updated values.
+
+Tradingview channel pattern is ```tradingview@pairsymbol_resolution```.
+Supported resolutions are **1, 5, 15, 30, 60, 120, 240** as minutes and for daily **1d**, for weekly **1w**.
+
+Example channels:
+```
+tradingview@btctry_5
+tradingview@ethusdt_1d
+tradingview@usdttry_240
+```
+
+Message type is candle. The message is sent active subscribers when a trade is created.
+
+| Field Name | Field Type | Description |
+| :--------- | :--------- | :---------- |
+| ps         | string     | Pair Symbol, BTCUSDT |
+| e          | string     | Event name such as btctry_5 |
+| d          | integer    | Candle start date in unix seconds |
+| r          | integer    | Resolution in minutes (assume month is 30-day) |
+| o          | string     | Open price |
+| c          | string     | Close price |
+| h          | string     | High price |
+| l          | string     | Low price |
+| v          | string     | Volume |
 
 <br />
 
-## Order Status & Trade
+## User Order Trade
 
-This feature is not enabed yet.
+Order status and trade data is user specific and required to be authenticated to receive that kind of messages.
+You do not require to subscribe to any channel to receive order status messages. Your each authenticated connection will receive same message when your order has new trade.
+
+Message type is user-trade.
+
+| Field Name | Field Type | Description |
+| :--------- | :--------- | :---------- |
+| ps         | string     | Pair Symbol, BTCUSDT |
+| o          | integer    | Order Id |
+| tq         | string     | Trade quantity |
+| oq         | string     | Order quantity |
+| lq         | string     | Order left quantity |
+| tt         | string     | Trade total (Price * Quantity) |
+| c          | string     | Trade Count for same order |
+| p          | string     | Trade price |
+| s          | string     | Order status |
+| sd         | string     | Order side (BUY or SELL) |
+| t          | string     | Order type |
 
 <br />
 
